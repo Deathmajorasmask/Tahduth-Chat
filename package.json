@@ -1,0 +1,32 @@
+{
+    "name": "tahduthchatapp",
+    "version": "1.0.0",
+    "description": "Simple chat app built with node.js and socket.io",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Deathmajorasmask"
+    },
+    "author": "Noufel Gouirhate & Deathmajoras",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Deathmajorasmask"
+    },
+    "homepage": "https://github.com/ngrt/simpleChatApp#readme",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "ejs": "^2.5.7",
+        "express": "^4.16.2",
+        "express-fileupload": "^1.1.4",
+        "mysql": "^2.16.0",
+        "node-emoji": "^1.8.1",
+        "nodemailer": "^6.2.1",
+        "nodemon": "^1.14.3",
+        "socket.io": "^2.0.4"
+    },
+    "devDependencies": {}
+}

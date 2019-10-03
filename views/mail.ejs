@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/mail.css">
+    <script src="jquery-latest.min.js"></script>
+    <script src="/mail.js"></script>
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+
+    <div class="credits"> Bienvenido
+        <%= user.UName %>
+    </div>
+    <div class="centred-text transition">
+        <h1>Say goodbye!</h1>
+        <img src="/img/mail.png">
+    </div>
+
+    <div class="form-container" style="display: block;">
+        <span class="alert" style="display: none;">Fill all the fields!</span>
+        <span class="alert" style="display: none;">Fill all the fields!</span>
+        <span class="alert" style="display: none;">Fill all the fields!</span>
+        <div class="close-form">x</div>
+        <form class="form-inner" action="" method="post" id="frmSendEmail" enctype="multipart/form-data">
+            <div class="form-left">
+
+                <div class="label-line">
+                    <span class="span"></span>
+                    <label class="label transition">Name</label><input class="input" name="name" id="name" value="<%= user.UName %>" autocomplete="off">
+                </div>
+
+                <div class="label-line">
+                    <span class="span"></span>
+                    <label class="label transition">My Mail</label><input class="input" name="mymail" id="mymail" type="email" value="<%= user.UEmail %>" autocomplete="off">
+                </div>
+
+                <div class="label-line">
+                    <span class="span"></span>
+                    <label class="label transition">Password</label><input class="input" name="password" id="password" type="password" autocomplete="off">
+                </div>
+
+                <div class="label-line">
+                    <span class="span"></span>
+                    <label class="label transition">To</label><input class="input" name="tomail" id="tomail" autocomplete="off">
+                </div>
+
+                <div class="label-line textarea">
+                    <span class="span"></span>
+                    <label class="label transition">Text</label><textarea class="input" name="text" id="text"></textarea>
+                </div>
+            </div>
+            <div class="form-right transition">
+                <div class="message-sent">
+                    <span></span> Message sent
+                </div>
+                <div class="button-overlay"></div>
+                <div class="button">
+                    <img src="/img/plane.png">
+                    <span>Send</span>
+                </div>
+            </div>
+            <!-- <input type="submit" value="Prueba"> /mail/<%= user.idUsers %> -->
+        </form>
+    </div>
+</body>
+
+</html>

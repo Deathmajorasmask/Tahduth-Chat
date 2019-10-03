@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(img/Deep.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.container {
+    position: absolute;
+    top: 79%;
+    left: 50%;
+    width: 320px;
+    transform: translate(-50%, -50%);
+}
+
+.containersignup {
+    position: absolute;
+    top: 84%;
+    left: 50%;
+    width: 320px;
+    transform: translate(-50%, -50%);
+}
+
+.signup,
+.login {
+    width: 50%;
+    background: #000000;
+    color: #ffffff;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.login-box {
+    width: 320px;
+    height: 420px;
+    background: #000;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.sigup-box {
+    width: 320px;
+    height: 600px;
+    background: #000;
+    color: #fff;
+    top: 45%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.sigup-box .avatar,
+.login-box .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+.sigup-box h1,
+.login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.sigup-box label,
+.login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.sigup-box input,
+.login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sigup-box input[type="text"],
+.sigup-box input[type="password"],
+.sigup-box input[type="file"],
+.sigup-box input[type="tel"],
+.sigup-box input[type="email"],
+.login-box input[type="text"],
+.login-box input[type="password"],
+.login-box input[type="file"],
+.login-box input[type="tel"],
+.login-box input[type="email"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.sigup-box input[type="submit"],
+.login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0051ff;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.sigup-box input[type="submit"]:hover,
+.login-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
+.sigup-box a,
+.login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.sigup-box a:hover,
+.login-box a:hover {
+    color: #fff;
+}

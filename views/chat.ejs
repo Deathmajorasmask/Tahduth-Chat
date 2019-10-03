@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
+    <link href="font.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-latest.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="socket.io.js"></script>
+    <link href="jquery.multiselect.css" rel="stylesheet" />
+    <script src="jquery.multiselect.js"></script>
+    <!-- <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <link href="jquery.multiselect.css" rel="stylesheet" />
+    <script src="jquery.multiselect.js"></script> -->
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+        <span id="windowTitle">Create New Group</span>
+        <div id="modal-content">
+            <!-- USERNAME INPUT -->
+            <label for="lblgroupName">Username</label>
+            <input type="text" id="groupName" placeholder="Name of group" autocomplete="off">
+            <select name="basic" multiple="multiple" class="GroupUsers">
+                    <% if (friends.length > 0) {%>
+                        <% friends.forEach((friends, index) => { %>
+                <option value="<%= friends.idUsers %>"><%= friends.UName %></option>
+                <% }) %>
+                <% } else { %>
+                    alert("No hay otros usuarios");
+                    <% } %>
+            </select>
+            <br>
+            <input type="button" value="Create Group" id="Create_Group" class="">
+            <input type="button" value="Cancel" id="Cancel" class="">
+        </div>
+    </div>
+
+    <div id="myModal2" class="modal">
+        <span id="windowTitle">Videocall</span>
+        <div id="modal-content">
+            <video src="" id="video" autoplay="true"></video>
+            <!-- Lo puedo ocultar con style = 'display:none;' -->
+            <img id="play">
+            <canvas id="preview" style='display:none;'></canvas>
+            <div id="logger"></div>
+        </div>
+    </div>
+
+    <div id="slider-title-page">
+        <img id="slider-title-img" src="/assets/img/<%= myIdUser.UPhoto %>" />
+        <p id="slider-title-message" class="<%= myIdUser.idUsers %>">
+            <%= myIdUser.UName %>
+        </p>
+        <a id="aTypeBtn" href="/mail/<%= myIdUser.idUsers %>" target="_blank">Mensajeria</a>
+        <div class="container">
+            <% if (myIdUser.UState != '0'){ %>
+                <div id="statusConnection" class="toggle-btn active" onclick="this.classList.toggle('active')">
+                    <div class="inner-circle"></div>
+                </div>
+                <% } else {%>
+                    <div id="statusConnection" class="toggle-btn" onclick="this.classList.toggle('active')">
+                        <div class="inner-circle"></div>
+                    </div>
+                    <% } %>
+        </div>
+    </div>
+
+    <div id="panel_emojis">
+        <div class="grinning" id="emojibuttons">😀</div>
+        <div class="grin" id="emojibuttons">😁</div>
+        <div class="joy" id="emojibuttons">😂</div>
+        <div class="smiley" id="emojibuttons">😃</div>
+        <div class="smile" id="emojibuttons">😄</div>
+        <div class="sweat_smile" id="emojibuttons">😅</div>
+        <div class="laughing" id="emojibuttons">😆</div>
+        <div class="pizza" id="emojibuttons">🍕</div>
+        <div class="innocent" id="emojibuttons">😇</div>
+        <div class="smiling_imp" id="emojibuttons">😈</div>
+        <div class="wink" id="emojibuttons">😉</div>
+        <div class="blush" id="emojibuttons">😊</div>
+        <div class="yum" id="emojibuttons">😋</div>
+        <div class="relieved" id="emojibuttons">😌</div>
+        <div class="heart_eyes" id="emojibuttons">😍</div>
+        <div class="sunglasses" id="emojibuttons">😎</div>
+        <div class="smirk" id="emojibuttons">😏</div>
+        <div class="buzzt" id="buzz"><img src="/img/fishBuzz.png" /> </div>
+    </div>
+
+    <div id="chatContent">
+        <section id="change_username">
+            <p id="change_username_message">
+
+            </p>
+            <img id="slider-title-makeVideo" src="/assets/img/video_default.png" class="makeVideo" />
+        </section>
+
+        <section id="chatroom">
+            <section id="feedback"></section>
+        </section>
+
+        <section id="input_zone">
+            <input id="message" class="vertical-align" type="text" />
+            <button id="send_message" class="verticalbutton" type="button">Send</button>
+            <button id="send_message_group" class="verticalbutton" type="button">Send</button>
+            <div id="showemojis">
+                <img src="/img/Tuna.jpg">
+            </div>
+        </section>
+    </div>
+
+    <div id="chat-sidebar">
+        <div id="sidebar-user-box" class="group-add">
+            <img src="/assets/img/create_group.png" />
+            <span id="slider-username">Create Group</span>
+        </div>
+        <% if (friends.length > 0) {%>
+            <% friends.forEach((friends, index) => { %>
+                <div id="sidebar-user-box" class="<%= friends.idUsers %>">
+                    <img src="/assets/img/<%= friends.UPhoto %>" />
+                    <span id="slider-username">@<%= friends.UName %> </span>
+                    <% if (friends.UState != '0'){ %>
+                        <img id="statusFriends" src="/img/StatusGreen.png" />
+                        <% } else { %>
+                            <img id="statusFriends" src="/img/StatusRed.png" />
+                            <% } %>
+                </div>
+                <% }) %>
+                    <% } else { %>
+                        alert("No hay otros usuarios");
+                        <% } %>
+                            <!-- GROUPS -->
+                            <% if (myGroups != null){ %>
+                                <% if (myGroups.length > 0) {%>
+                                    <% myGroups.forEach((myGroups, index) => { %>
+                                        <div id="sidebar-group-box" class="<%= myGroups.idChat_Group %>">
+                                            <img src="/assets/img/image_group_default.png" />
+                                            <span id="slider-username">@<%= myGroups.CGNameGroup %> </span>
+                                        </div>
+                                        <% }) %>
+                                            <% } else { %>
+                                                alert("No hay otros usuarios");
+                                                <% }} %>
+
+
+    </div>
+    <script src="chat.js"></script>
+</body>
+
+</html>

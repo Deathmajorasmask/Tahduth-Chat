@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Tahduth </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="master.css">
+    <script src="jquery-latest.min.js"></script>
+    <script src="master.js"></script>
+</head>
+
+<body>
+    <h1>
+        <%= message %>
+    </h1>
+    <div class="container">
+        <div class="signup">Sign Up</div>
+        <div class="login">Log In</div>
+    </div>
+
+    <div class="login-box">
+
+        <img src="img/logo.png" class="avatar" alt="Avatar Image">
+        <h1>Tahduth <span>تحدث</span> </h1>
+        <form action="" method="post" id="frmLogIn" enctype="multipart/form-data">
+            <!-- USERNAME INPUT -->
+            <label for="username">Email</label>
+            <input type="text" name="email" placeholder="Email" autocomplete="off">
+            <!-- PASSWORD INPUT -->
+            <label for="password">Password</label>
+            <input type="password" name="pass" placeholder="Password" autocomplete="off">
+            <input type="submit" id="btnLogIn" value="Log In">
+        </form>
+    </div>
+
+    <div class="containersignup">
+        <div class="signup">Sign Up</div>
+        <div class="login">Log In</div>
+    </div>
+
+    <div class="sigup-box">
+
+        <img src="img/logo.png" class="avatar" alt="Avatar Image">
+        <h1>Tahduth <span>تحدث</span> </h1>
+        <form action="" method="post" id="frmSignUp" enctype="multipart/form-data">
+            <!-- USERNAME INPUT -->
+            <label for="username">Username</label>
+            <input type="text" name="SUuser" placeholder="Username" autocomplete="off">
+            <!-- PASSWORD INPUT -->
+            <label for="password">Password</label>
+            <input type="password" name="SUpass" placeholder="Password" autocomplete="off">
+            <!-- PASSWORD INPUT -->
+            <label for="email">Email</label>
+            <input type="email" name="SUemail" placeholder="Email" autocomplete="off">
+            <!-- PASSWORD INPUT -->
+            <label for="photo">Foto de Perfil</label>
+            <input type="file" name="SUimage"> <br> <br>
+            <input type="submit" id="btnSignUp" value="Sign Up">
+
+        </form>
+
+    </div>
+</body>
+
+</html>

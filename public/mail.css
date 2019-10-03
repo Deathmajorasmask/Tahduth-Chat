@@ -1,0 +1,437 @@
+html,
+body {
+    background: rgb(20, 45, 56);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    font-size: 18px;
+}
+
+.transition {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(.4, 0, .5, 1);
+    -moz-transition-timing-function: cubic-bezier(.4, 0, .5, 1);
+    transition-timing-function: cubic-bezier(.4, 0, .5, 1);
+}
+
+.centred-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%)translateY(-50%);
+    -moz-transform: translateX(-50%)translateY(-50%);
+    transform: translateX(-50%)translateY(-50%);
+    text-align: center;
+    cursor: pointer;
+}
+
+.centred-text:hover {
+    opacity: .7;
+}
+
+.credits {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #fff;
+    font-weight: 100;
+}
+
+.form-container {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background: #f2f2f2;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%)translateY(-50%);
+    -moz-transform: translateX(-50%)translateY(-50%);
+    transform: translateX(-50%)translateY(-50%);
+    overflow: hidden;
+    overflow: hidden;
+    display: none;
+}
+
+.form-container.close {
+    width: 150px;
+    height: 150px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.form-container.close-all {
+    width: 0px;
+    height: 0px;
+}
+
+.form-container.close .form-left {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.form-container.close .form-right {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+
+.form-container.close .message-sent {
+    font-size: 0;
+}
+
+.form-container.close .message-sent span {
+    margin: 0 auto;
+}
+
+.close-form {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.18);
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: .8em;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-left {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    background: rgb(176, 223, 96);
+    overflow: hidden;
+}
+
+.form-right.error {
+    -webkit-animation: 3s error forwards;
+}
+
+@-webkit-keyframes error {
+    0% {
+        background: rgb(176, 223, 96)
+    }
+    25% {
+        background: rgb(250, 89, 89)
+    }
+    75% {
+        background: rgb(250, 89, 89)
+    }
+    100% {
+        background: rgb(176, 223, 96)
+    }
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: transparent;
+    position: absolute;
+    background: transparent;
+    height: 100%;
+    font-size: 1em;
+    font-family: inherit;
+    font-weight: 300;
+    padding-top: 15px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #f2f2f2 inset;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    border: none;
+    resize: none;
+    background: transparent;
+    padding: 0;
+    padding-top: 20px;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.label {
+    display: block;
+    font-weight: lighter;
+    color: rgb(111, 111, 111);
+    position: absolute;
+    top: 20px;
+    font-size: 1em;
+    z-index: -1;
+}
+
+.label-line.active .label {
+    top: 0px;
+    font-size: .8em;
+    color: rgb(0, 189, 160);
+}
+
+.span {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgb(192, 192, 192);
+    bottom: 0px;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s;
+}
+
+.span.active {
+    top: auto;
+    bottom: 0px;
+}
+
+.label-line {
+    position: relative;
+    height: 50px;
+    margin: 0 0 10px;
+}
+
+.label-line.textarea {
+    height: 100px;
+}
+
+.span:before {
+    content: "";
+    width: 0;
+    left: 50%;
+    height: 2px;
+    background: rgb(0, 189, 160);
+    position: absolute;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s;
+}
+
+.label-line.active .span:before {
+    width: 100%;
+    left: 0%;
+    height: 2px;
+    background: rgb(0, 189, 160);
+}
+
+.button img {
+    opacity: .3;
+    margin: auto;
+    display: block;
+}
+
+.button {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.button-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.button span {
+    margin: 20px 0 0;
+    display: block;
+    color: #fff;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.ink {
+    display: block;
+    position: absolute;
+    background: rgb(0, 189, 160);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    z-index: 3;
+}
+
+.ink.animate {
+    -webkit-animation: ripple 0.65s forwards;
+    -moz-animation: 'ripple' 0.65s forwards;
+    -o-animation: ripple 0.65s forwards;
+    animation: ripple 0.65s forwards;
+}
+
+@-webkit-keyframes ripple {
+    100% {
+        -webkit-transform: scale(2.5);
+    }
+}
+
+@-moz-keyframes ripple {
+    100% {
+        -moz-transform: scale(2.5);
+    }
+}
+
+@-o-keyframes ripple {
+    100% {
+        -o-transform: scale(2.5);
+    }
+}
+
+@keyframes ripple {
+    100% {
+        transform: scale(2.5);
+    }
+}
+
+
+/* MESSAGE SENT */
+
+.message-sent {
+    width: 100%;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+    text-transform: uppercase;
+    display: none;
+    z-index: 1000;
+}
+
+.message-sent span {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.message-sent span:before,
+.message-sent span:after {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(.4, 0, .5, 1);
+    -moz-transition-timing-function: cubic-bezier(.4, 0, .5, 1);
+    transition-timing-function: cubic-bezier(.4, 0, .5, 1);
+}
+
+.message-sent span:before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 10px;
+    background: white;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    top: 44px;
+    left: 16px;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    transform-origin: top left;
+}
+
+.message-sent span:after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 10px;
+    background: white;
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    transform: rotate(225deg);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    top: 51px;
+    left: 23px;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    transform-origin: top left;
+}
+
+.message-sent.active span:before {
+    width: 50px;
+}
+
+.message-sent.active span:after {
+    width: 30px;
+}
+
+span.alert {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #FCE570;
+    z-index: 1000;
+    padding: 10px 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transform: translateX(-50%)translateY(-50%);
+    -moz-transform: translateX(-50%)translateY(-50%);
+    transform: translateX(-50%)translateY(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-weight: 300;
+    display: none;
+}

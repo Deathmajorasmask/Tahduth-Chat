@@ -1,0 +1,376 @@
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    /* animation: shake 0.5s; */
+    animation: none;
+    margin: 0px;
+    height: 100%;
+}
+
+section#chatroom {
+    border: 5px inset #2750da;
+    height: 88%;
+    overflow: auto;
+}
+
+section#input_zone {
+    height: 7%;
+    text-align: center;
+    background-color: #74a0f0;
+}
+
+.vertical-align {
+    position: relative;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.verticalbutton {
+    position: relative;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 260px;
+    height: 30px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #a18d6c;
+    font-family: 'Lucida Console', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+input#username {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+input#message {
+    display: inline-block;
+    width: 82%;
+    height: 70%;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 2vh;
+}
+
+button#send_message {
+    display: inline-block;
+    height: 70%;
+    width: 10%;
+}
+
+button#send_message_group {
+    display: inline-block;
+    height: 70%;
+    width: 10%;
+}
+
+p.message {
+    margin: 0px;
+    width: 100%;
+    height: 40px;
+    font-size: 2vh;
+    font-family: 'Comfortaa', sans-serif;
+    padding: 1vh;
+}
+
+.message:nth-child(even) {
+    background-color: #81DAF5;
+}
+
+.message:nth-child(odd) {
+    background-color: #81BEF7;
+}
+
+
+/*Para acomodar el chat*/
+
+#chatContent {
+    position: relative;
+    /*top: calc(50% - 35px);
+    left: calc(50% - 255px);*/
+    width: 80%;
+    height: 95%;
+}
+
+
+/**** Slider Layout Popup *********/
+
+#chat-sidebar {
+    width: 20%;
+    /* position: fixed; */
+    position: fixed;
+    height: 100%;
+    right: 0px;
+    top: 5%;
+    /*     padding-top: 10px;
+    padding-bottom: 10px; */
+    border: 1px solid #b2b2b2;
+}
+
+#sidebar-user-box {
+    padding: 4px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    font-family: Calibri;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#sidebar-user-box:hover {
+    background-color: #999999;
+}
+
+#sidebar-user-box:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#sidebar-group-box {
+    padding: 4px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    font-family: Calibri;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#sidebar-group-box:hover {
+    background-color: #999999;
+}
+
+#sidebar-group-box:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    float: left;
+}
+
+#slider-username {
+    float: left;
+    line-height: 30px;
+    margin-left: 5px;
+}
+
+
+/****Cintilla de arriba****/
+
+#slider-title-page {
+    background-color: #000b29;
+    width: 100%;
+    height: 5%;
+}
+
+#slider-title-message {
+    display: inline-block;
+    font-family: 'Lucida Console', sans-serif;
+    color: white;
+}
+
+#slider-title-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#change_username {
+    height: 5%;
+    width: 100%;
+    background-color: rgb(0, 45, 170);
+}
+
+#change_username_message {
+    display: inline-block;
+    font-family: 'Lucida Console', sans-serif;
+    color: rgb(86, 205, 252);
+}
+
+#slider-title-makeVideo {
+    display: inline-block;
+}
+
+
+/*Float Windows*/
+
+#myModal {
+    position: fixed;
+    /* Stay in place */
+    /* Hidden by default */
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    z-index: 1;
+    /* Sit on top */
+    background-color: #81DAF5;
+}
+
+#myModal2 {
+    position: fixed;
+    /* Stay in place */
+    /* Hidden by default */
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+    z-index: 1;
+    /* Sit on top */
+    background-color: #81DAF5;
+}
+
+#video {
+    width: 480px;
+    height: 320px;
+}
+
+#play {
+    width: 480px;
+    height: 320px;
+    z-index: 0;
+}
+
+#windowTitle {
+    font-size: 50;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    font-family: 'Lucida Console', sans-serif;
+    font-weight: bold
+}
+
+#aTypeBtn:link {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#aTypeBtn:hover,
+#aTypeBtn:active {
+    background-color: red;
+}
+
+#showemojis {
+    display: inline-block;
+    position: relative;
+    top: 20%;
+    cursor: pointer;
+}
+
+#panel_emojis {
+    position: fixed;
+    /* Stay in place */
+    /* Hidden by default */
+    left: 62%;
+    top: 78%;
+    width: 200px;
+    height: 120px;
+    padding: 10px;
+    z-index: 1;
+    /* Sit on top */
+    background-color: #81DAF5;
+}
+
+#emojibuttons {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    float: left;
+    padding: 10px;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(1px, 1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, -1px) rotate(-1deg);
+    }
+    75% {
+        transform: translate(2px, -1px) rotate(2deg);
+    }
+    100% {
+        transform: translate(-1px, 1px) rotate(-1deg);
+    }
+}
+
+.container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+}
+
+.toggle-btn {
+    width: 70px;
+    height: 30px;
+    background: gray;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.toggle-btn>.inner-circle {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.toggle-btn.active {
+    background: #00acee;
+}
+
+.toggle-btn.active>.inner-circle {
+    margin-left: 40px;
+}
+
+#statusFriends {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    float: right;
+}
+
+#buzz {
+    cursor: pointer;
+    width: 10px;
+    height: 60px;
+    position: relative;
+    float: left;
+}
