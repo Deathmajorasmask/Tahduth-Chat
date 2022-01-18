@@ -1,7 +1,7 @@
 $(function() {
     //make connection  
-    var socket = io.connect('http://10.0.0.4:3000')
-        //var socket = io.connect('http://localhost:3000')
+    //var socket = io.connect('http://10.0.0.4:3000')
+    var socket = io.connect('http://localhost:3000')
         //Variable of control
     var CtrlMessage = false,
         CtrlMessageVideo = false,
