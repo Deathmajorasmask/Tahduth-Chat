@@ -11,12 +11,12 @@
         "type": "git",
         "url": "https://github.com/Deathmajorasmask"
     },
-    "author": "Noufel Gouirhate & Deathmajoras",
-    "license": "ISC",
+    "author": "Deathmajoras",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/Deathmajorasmask"
     },
-    "homepage": "https://github.com/ngrt/simpleChatApp#readme",
+    "homepage": "https://github.com/Deathmajorasmask/Tahduth-Chat",
     "dependencies": {
         "body-parser": "^1.18.3",
         "ejs": "^2.5.7",
